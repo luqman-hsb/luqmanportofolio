@@ -8,10 +8,17 @@
 :root {
     --primary-color: #6c63ff;
     --secondary-color: #ff6584;
-    --dark-color: #2a2d43;
-    --light-color: #f8f9fa;
-    --gray-color: #8a8da0;
-    --shadow: 0 10px 30px rgba(108, 99, 255, 0.1);
+    --dark-color: #f8f9fa;
+    --light-color: #1a1d2e;
+    --bg-color: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-card: #21262d;
+    --text-color: #e6edf3;
+    --text-secondary: #8b949e;
+    --gray-color: #8b949e;
+    --border-color: #30363d;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    --shadow-light: 0 5px 20px rgba(0, 0, 0, 0.2);
     --transition: all 0.3s ease;
 }
 
@@ -22,8 +29,8 @@ html {
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    color: var(--dark-color);
-    background-color: #fff;
+    color: var(--text-color);
+    background-color: var(--bg-color);
     overflow-x: hidden;
 }
 
@@ -123,7 +130,7 @@ img {
 }
 
 .section-subtitle {
-    color: var(--gray-color);
+    color: var(--text-secondary);
     font-size: 1.1rem;
 }
 
@@ -136,8 +143,8 @@ img {
     z-index: 1000;
     padding: 20px 0;
     transition: var(--transition);
-    background-color: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    background-color: rgba(13, 17, 23, 0.95);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
 .navbar .container {
@@ -150,7 +157,7 @@ img {
     font-size: 1.8rem;
     font-weight: 800;
     font-family: 'Montserrat', sans-serif;
-    color: var(--dark-color);
+    color: var(--text-color);
 }
 
 .logo span {
@@ -166,37 +173,15 @@ img {
     font-weight: 500;
     transition: var(--transition);
     position: relative;
+    color: var(--text-color);
 }
 
 .nav-link:hover, .nav-link.active {
     color: var(--primary-color);
 }
 
-.nav-link.active::after {
-    content: '';
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    background-color: var(--primary-color);
-    border-radius: 50%;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.nav-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
 .nav-toggle span {
-    width: 25px;
-    height: 3px;
-    background-color: var(--dark-color);
-    margin: 3px 0;
-    transition: var(--transition);
-    border-radius: 2px;
+    background-color: var(--text-color);
 }
 
 /* HERO SECTION */
@@ -204,7 +189,7 @@ img {
     padding-top: 150px;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, #f5f7ff 0%, #f0f2ff 100%);
+    background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
 }
 
 .hero .container {
@@ -268,16 +253,12 @@ img {
     font-size: 1.8rem;
     font-weight: 600;
     margin-bottom: 20px;
-    color: var(--dark-color);
-}
-
-.hero-role .typing-text {
-    color: var(--primary-color);
+    color: var(--text-color);
 }
 
 .hero-description {
     font-size: 1.1rem;
-    color: var(--gray-color);
+    color: var(--text-secondary);
     margin-bottom: 30px;
     max-width: 500px;
 }
@@ -293,7 +274,7 @@ img {
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto;
-    border: 10px solid white;
+    border: 10px solid var(--bg-card);
     box-shadow: var(--shadow);
 }
 
@@ -315,7 +296,8 @@ img {
 .floating-element {
     position: absolute;
     padding: 10px 20px;
-    background-color: white;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
     border-radius: 50px;
     font-weight: 600;
     box-shadow: var(--shadow);
@@ -341,8 +323,8 @@ img {
 .fe-3 {
     bottom: 20%;
     left: 10%;
-    background-color: white;
-    color: var(--dark-color);
+    background-color: var(--bg-card);
+    color: var(--text-color);
     animation-delay: 2s;
 }
 
@@ -418,6 +400,11 @@ img {
 .about-text h3 {
     font-size: 1.8rem;
     margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.about-text p {
+    color: var(--text-secondary);
 }
 
 .about-info {
@@ -431,20 +418,21 @@ img {
     display: flex;
     justify-content: space-between;
     padding-bottom: 10px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .info-label {
     font-weight: 600;
+    color: var(--text-color);
 }
 
 .info-value {
-    color: var(--gray-color);
+    color: var(--text-secondary);
 }
 
 /* SKILLS SECTION */
 .skills {
-    background-color: #f9faff;
+    background-color: var(--bg-secondary);
 }
 
 .skills-grid {
@@ -454,17 +442,18 @@ img {
 }
 
 .skill-card {
-    background-color: white;
+    background-color: var(--bg-card);
     padding: 30px;
     border-radius: 15px;
     box-shadow: var(--shadow);
     transition: var(--transition);
     text-align: center;
+    border: 1px solid var(--border-color);
 }
 
 .skill-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(108, 99, 255, 0.15);
+    box-shadow: 0 15px 40px rgba(108, 99, 255, 0.2);
 }
 
 .skill-icon {
@@ -482,17 +471,18 @@ img {
 
 .skill-card h3 {
     margin-bottom: 10px;
+    color: var(--text-color);
 }
 
 .skill-card p {
-    color: var(--gray-color);
+    color: var(--text-secondary);
     font-size: 0.9rem;
     margin-bottom: 20px;
 }
 
 .skill-progress {
     height: 8px;
-    background-color: #f0f0f0;
+    background-color: var(--border-color);
     border-radius: 4px;
     overflow: hidden;
 }
@@ -517,11 +507,12 @@ img {
 .filter-btn {
     padding: 8px 20px;
     background-color: transparent;
-    border: 2px solid #eee;
+    border: 2px solid var(--border-color);
     border-radius: 50px;
     font-weight: 500;
     cursor: pointer;
     transition: var(--transition);
+    color: var(--text-color);
 }
 
 .filter-btn.active, .filter-btn:hover {
@@ -607,7 +598,7 @@ img {
 
 /* CONTACT SECTION */
 .contact {
-    background-color: #f9faff;
+    background-color: var(--bg-secondary);
 }
 
 .contact-content {
@@ -641,14 +632,20 @@ img {
 
 .contact-text h3 {
     margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.contact-text p {
+    color: var(--text-secondary);
 }
 
 .contact-form {
     flex: 1;
-    background-color: white;
+    background-color: var(--bg-card);
     padding: 40px;
     border-radius: 15px;
     box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
 }
 
 .form-group {
@@ -658,11 +655,13 @@ img {
 .form-group input, .form-group textarea {
     width: 100%;
     padding: 15px;
-    border: 1px solid #eee;
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
     transition: var(--transition);
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 .form-group input:focus, .form-group textarea:focus {
@@ -673,10 +672,11 @@ img {
 
 /* FOOTER */
 .footer {
-    background-color: var(--dark-color);
+    background-color: var(--bg-secondary);
     color: white;
     padding: 60px 0 30px;
     text-align: center;
+    border-top: 1px solid var(--border-color);
 }
 
 .footer-logo {
@@ -689,7 +689,7 @@ img {
 }
 
 .footer p {
-    color: #aaa;
+    color: var(--text-secondary);
     max-width: 600px;
     margin: 0 auto 25px;
 }
@@ -704,22 +704,24 @@ img {
 .social-links a {
     width: 40px;
     height: 40px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--border-color);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: var(--transition);
+    color: var(--text-color);
 }
 
 .social-links a:hover {
     background-color: var(--primary-color);
+    color: white;
     transform: translateY(-5px);
 }
 
 .copyright {
     font-size: 0.9rem;
-    color: #777;
+    color: var(--text-secondary);
 }
 
 /* BACK TO TOP */
@@ -795,15 +797,16 @@ img {
         top: 80px;
         left: 0;
         width: 100%;
-        background-color: white;
+        background-color: var(--bg-secondary);
         flex-direction: column;
         align-items: center;
         padding: 20px 0;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         transform: translateY(-100%);
         opacity: 0;
         visibility: hidden;
         transition: var(--transition);
+        border-bottom: 1px solid var(--border-color);
     }
     
     .nav-menu.active {
